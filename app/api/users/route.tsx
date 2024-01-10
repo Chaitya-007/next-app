@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import schema from "./schema";
 
 export function GET(request: NextRequest) {
     return NextResponse.json([
@@ -17,9 +18,12 @@ export async function POST(request: NextRequest)
     // If invalid, return 400
     //Else return
 
-    if(!body.name)
+    const validation = schema.safeParse(body);
+    // if(!body.name)
+    if(!validation.success)
     {
-        return NextResponse.json({error: 'Name is required'}, {status: 400});
+        // return NextResponse.json({error: 'Name is required'}, {status: 400});
+        return NextResponse.json(validation.error.errors, {status: 400});
     }
 
     // Whatever we will send we will get that in response
