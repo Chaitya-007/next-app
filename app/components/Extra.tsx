@@ -1,3 +1,5 @@
+// Deleted content from product.tsx of api/products
+
 // import { NextRequest, NextResponse } from "next/server";
 // import schema from "./schema";
 // import prisma from "@/prisma/client";
