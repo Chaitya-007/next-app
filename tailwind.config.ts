@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+
+      fontFamily: {
+        poppins : 'var(--font-poppins)' //to rread the variable property we use var
+      },
+
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

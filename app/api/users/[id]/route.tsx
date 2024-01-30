@@ -11,7 +11,8 @@ export async function GET(request: NextRequest,
 
     const user = await prisma.user.findUnique(
         {
-            where: {id: parseInt(params.id)},
+            // where: {id: parseInt(params.id)},
+            where: {id: params.id},
         }
     );
 
@@ -49,7 +50,8 @@ export async function PUT(request: NextRequest,
         
         const user = await prisma.user.findUnique(
             {
-                where: {id: parseInt(params.id)},
+                // where: {id: parseInt(params.id)},
+                where: {id: params.id},
             }
         );
 
@@ -60,7 +62,8 @@ export async function PUT(request: NextRequest,
 
         const updatedUser = await prisma.user.update(
             {
-                where: {id: parseInt(params.id)},
+                // where: {id: parseInt(params.id)},
+                where: {id: params.id},
                 data: {
                     name: body.name,
                     email: body.email,
@@ -82,7 +85,8 @@ export async function PUT(request: NextRequest,
 
             const user = await prisma.user.findUnique(
                 {
-                    where: {id: parseInt(params.id)},
+                    // where: {id: parseInt(params.id)},
+                    where: {id: params.id},
                 }
             );
 
@@ -94,7 +98,8 @@ export async function PUT(request: NextRequest,
 
             await prisma.user.delete(
                 {
-                    where: {id: parseInt(params.id)},
+                    // where: {id: parseInt(params.id)},
+                    where: {id: params.id},
                 }
             );
 
